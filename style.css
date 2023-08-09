@@ -1,6 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 html {
     scroll-behavior: smooth;
   }
@@ -35,6 +33,15 @@ body {
     z-index: 100;
 }
 
+#joke {
+    padding-top: 10px;
+    color: #fff;
+    opacity: 0.7; /* this will make the text a bit transparent */
+    font-size: 11px; /* this will make the text smaller, adjust the value as needed */
+}
+
+
+
 .logo {
     position: relative;
     font-size: 25px;
@@ -68,3 +75,588 @@ body {
 .navbar a.active {
     color: #00abf0;
 }
+
+.home {
+    height: 100vh;
+    background: url('Mino2.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+}
+
+.home-content {
+    max-width: 600px;
+    z-index: 101;
+}
+
+.home-content h1 {
+    position: relative;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.home-content h1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #081b29;
+    animation: showRight .6s ease forwards;
+    animation-delay: .5s;
+}
+
+.home-content h3 {
+    position: relative;
+    font-size: 32px;
+    font-weight: 700;
+    color: #00abf0;
+}
+
+.home-content h3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #081b29;
+    animation: showRight .6s ease forwards;
+    animation-delay: .6s;
+}
+
+.home-content p {
+    position: relative;
+    font-size: 16px;
+    margin: 20px 0 40px;
+}
+
+.home-content p::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: 1.6s;
+}
+
+.home-content .btn-box {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 345px;
+    height: 50px;
+}
+
+.home-content .btn-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: 1.9s;
+    z-index: 2;
+}
+
+.btn-box a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+    background: #00abf0;
+    border: 2px solid #00abf0;
+    border-radius: 8px;
+    font-size: 19px;
+    color: #081b29;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.btn-box a:hover {
+    color: #00abf0;
+}
+
+.btn-box a:nth-child(2) {
+    background: transparent;
+    color: #00abf0;
+}
+
+.btn-box a:nth-child(2):hover {
+    color: #081b29;
+}
+
+.btn-box a:nth-child(2)::before {
+    background: #00abf0;
+}
+
+.btn-box a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #081b29;
+    z-index: -1;
+    transition: .5s;
+}
+
+.btn-box a:hover::before {
+    width: 100%;
+}
+
+.home-sci {
+    position: absolute;
+    bottom: 40px;
+    width: 170px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.home-sci::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: 2.5s;
+    z-index: 2;
+}
+
+.home-sci a {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #00abf0;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #00abf0;
+    text-decoration: none;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.home-sci a:hover {
+    color: #081b29;
+}
+
+.home-sci a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #00abf0;
+    z-index: -1;
+    transition: .5s;
+}
+
+.home-sci a:hover::before {
+    width: 100%;
+}
+
+.home-imgHover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    background: transparent;
+    transition: 3s;
+    animation: manipActiveHover .1s forwards;
+    animation-delay: 4s;
+    pointer-events: none;
+}
+
+.home-imgHover:hover {
+    background: #081b29;
+    opacity: .8;
+}
+
+.home-imgHover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 135%;
+    height: 100%;
+    background: #081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: 3s;
+    z-index: 100;
+}
+
+
+/* KEYFRAMES ANIMATION */
+@keyframes showRight {
+    100% {
+        width: 0;
+    }
+}
+
+@keyframes manipActiveHover {
+    100% {
+        pointer-events: auto;
+    }
+}
+.home-content h3 {
+    position: relative;
+    font-size: 32px;
+    font-weight: 700;
+    color: #00abf0;
+}
+
+/* New strikethrough CSS */
+#permanent-title {
+    position: relative;
+    overflow: hidden;
+    display: inline; /* Add this */
+}
+
+/* Strikethrough on Software Engineer */
+#permanent-title::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #ffffff; /* 00abf0 */
+    opacity: 75%;
+    animation: strikethroughAnimation 2s linear forwards;
+    animation-delay: 4s; /* second delay before the animation starts */
+}
+
+@keyframes strikethroughAnimation {
+    to {
+        width: 100%;
+    }
+}
+
+/* Other title animations (Example: Fades in) */
+#title {
+    font-size: 20px;
+    font-style: italic;
+    color: rgb(0, 124, 173); /* #00abf0 - (0, 171, 240, with #.#); opacity */
+    animation: fadeIn 2s ease-in-out forwards;
+    display: block; /* Changes to block */
+    padding-left: 0px; /* Resets to 0px */
+    position: relative;
+    top: 0px; /* Resets to 0px */
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0.2;
+        transform: translateY(-30px); /* Adjust as needed */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.home-content h3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #081b29;
+    animation: showRight 1s ease forwards;
+    animation-delay: 1.3s;
+}
+
+/* CONTACT FORM */
+
+.contact-form {
+    width: 60%; /* Adjusted width */
+    margin: auto;
+    padding: 3em; /* Increased padding */
+    border-radius: 15px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1); /* Increased shadow intensity */
+    border: 1px solid rgba(255, 255, 255, 0.05); /* Less visible border */
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.2em; /* Larger font size */
+    color: #ffffff; /* White text color */
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none; /* Remove border */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Add inner shadow */
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none; /* Remove border */
+    background-color: #ffffff; /* White background */
+    color: #0a7bc2; /* Blue text color */
+    font-size: 1.2em; /* Larger font size */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Add shadow */
+    cursor: pointer; /* Cursor changes to hand when hovering */
+}
+
+.contact-form button:hover {
+    background-color: #00abf0; /* Blue background on hover */
+    color: #ffffff; /* White text color on hover */
+}
+
+/* Prevent textarea resizing beyond form width */
+.contact-form textarea {
+    resize: vertical;
+    max-height: 150px;
+    max-width: 100%;
+}
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: rgba(0, 171, 240, 1);
+    margin: 10% auto;
+    padding: 0; /* Remove padding */
+    border: none; /* Remove border */
+    width: 60%;
+    height: 60%;
+    max-width: 800px;
+    max-height: 1000px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15); /* Add box shadow */
+    border-radius: 15px; /* Add border radius */
+}
+
+.form-title {
+    display: block; /* Make it a block-level element */
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 3em;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.03);
+
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    padding-right: 20px;
+    padding-top: 10px;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* PORTFOLIO */
+.portfolio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .portfolio-title {
+    text-align: center;
+    font-size: 2em;
+    color: #ffffff;
+    /* Add more styles as needed */
+}
+  
+  .card {
+    margin: 1em;
+    width: calc(100% / 3 - 2em); /* Three cards per row, adjust as needed */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  .card:hover {
+    transform: scale(1.03); /* Scales the size of the card up to 105% */
+    box-shadow: 0 0 30px rgba(0, 171, 240, 0.7);
+    
+}
+
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .card-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+  
+  .card-info h3 {
+    margin-top: 0;
+  }
+  
+  .card-info a {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none; 
+    background-color: #ffffff; 
+    color: #0a7bc2; 
+    font-size: 1.2em; 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
+    cursor: pointer; 
+    text-decoration: none;
+    transition: .3s;
+    max-width: 200px; /* maximum width */
+    text-align: center; 
+    margin-top: 20px; /* Space from the text above */
+    margin-bottom: 20px; /* Space from the card bottom */
+    margin-left: auto; /* automatic margin from left */
+    margin-right: auto; /* automatic margin from right */
+}
+
+
+.card-info a:hover {
+    background-color: #00abf0;
+    color: #ffffff;
+}
+
+
+
+/******************************************************* MAKING IT RESPONSIVE *******************************************************/
+@media screen and (max-width: 1200px) {
+    .home-content h1 {
+      font-size: 40px;
+    }
+    
+    .home-content h3 {
+      font-size: 24px;
+    }
+  
+    .navbar a {
+      font-size: 14px;
+    }
+  }
+  
+  @media screen and (max-width: 800px) {
+    .navbar a {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+    }
+    
+    .home {
+      padding: 0 5%;
+    }
+    
+    .home-content h1 {
+      font-size: 32px;
+    }
+    
+    .home-content h3 {
+      font-size: 20px;
+    }
+    
+    .home-content p {
+      font-size: 14px;
+      margin: 15px 0 30px;
+    }
+    
+    .home-content .btn-box {
+      width: 275px;
+      height: 60px;
+    }
+    
+    .btn-box a {
+      width: 125px;
+      font-size: 16px;
+    }
+  }
+  
+  @media screen and (max-width: 500px) {
+    .home-content h1 {
+      font-size: 24px;
+    }
+    
+    .home-content h3 {
+      font-size: 18px;
+    }
+    
+    .home-content p {
+      font-size: 12px;
+      margin: 10px 0 20px;
+    }
+    
+    .home-content .btn-box {
+      width: 275px;
+      height: 60px;
+    }
+    
+    .btn-box a {
+      width: 130px;
+      font-size: 14px;
+    }
+    
+    .home-sci a {
+      width: 30px;
+      height: 30px;
+      font-size: 16px;
+    }
+   
+    
+
+  }
