@@ -543,7 +543,7 @@ body {
 }
 
 #project1::before {
-    background-image: url('assets/images/Zaytoven.png');
+    background-image: url('assets/images/Zaytoven.PNG');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -555,7 +555,57 @@ body {
     background-repeat: no-repeat;
     background-position: center;
 }
+
+#project3::before {
+    background-image: url('assets/images/RatingLegends.PNG');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#project4::before {
+    background-image: url('assets/images/YouFirst.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#project5::before {
+    background-image: url('assets/images/Split-Logo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#project6::before {
+    background-image: url('assets/images/Split-Logo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#project7::before {
+    background-image: url('assets/images/Food-Dispenser.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#project8::before {
+    background-image: url('assets/images/Laser.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
   
+#project9::before {
+    background-image: url('assets/images/Password.PNG');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
   .card:hover {
     transform: scale(1.03); /* Scales the size of the card up to 105% */
     box-shadow: 0 0 30px rgba(0, 171, 240, 0.7);
