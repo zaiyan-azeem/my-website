@@ -536,6 +536,7 @@ body {
 
   
   .card {
+    display: none; /*default hide cards*/
     position: relative;
     margin: 1em;
     width: calc(100% / 3 - 2em); /* Three cards per row, adjust as needed */
@@ -543,8 +544,11 @@ body {
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
     transition: box-shadow 0.3s ease-in-out;
-    
   }
+
+  .card.show {
+    display: block; /* Only display cards with the show class */
+}
 
   .card::before {
     content: ""; /* This is necessary for the pseudo-element to show */
@@ -677,6 +681,31 @@ body {
     color: #ffffff;
 }
 
+/*FILTER CARDS*/
+
+.filter-btns {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* This is to ensure buttons wrap to the next line if there's not enough space */
+    gap: 10px;       /* This adds a little space between wrapped buttons */
+}
+
+.filter-btn {
+    padding: 10px 15px;
+    cursor: pointer;
+    border: none;
+    background-color: #ededed;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: #00abf0;
+    color: #081b29;
+}
 
 
 /******************************************************* MAKING IT RESPONSIVE *******************************************************/
