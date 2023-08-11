@@ -222,6 +222,19 @@
 
 <script src="script.js"></script>
 
+<script>
+    window.onbeforeunload = function () {
+       window.scrollTo(0, 0);
+    }
+    </script>
+    
+<script>
+    window.addEventListener("scroll", function() {
+        var header = document.querySelector(".header");
+        header.classList.toggle("scrolled", window.scrollY > 0);
+    });
+</script>
+
 </body>
 
 

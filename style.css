@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-html {
-    scroll-behavior: smooth;
-  }
+.solid-nav {
+    background: #081b29 !important;
+    transition: background 0.5s;
+ }
+ 
   
 * {
     margin: 0;
@@ -13,6 +15,10 @@ html {
 *::selection {
     background: #00abf0;
     color: #081b29;
+}
+.scrolled {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to bottom, #081b29, #00334e);
 }
 
 body {
@@ -26,12 +32,14 @@ body {
     left: 0;
     width: 100%;
     padding: 20px 10%;
-    background: transparent;
+    background: #081b29;  /* Set to the desired color of your bar */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 100;
+    z-index: 9999;
+
 }
+
 
 #joke {
     padding-top: 10px;
@@ -62,6 +70,8 @@ body {
     animation-delay: .3s;
 }
 
+
+
 .navbar a {
     font-size: 18px;
     color: #ededed;
@@ -71,9 +81,14 @@ body {
     transition: .3s;
 }
 
+.navbar a:focus {
+    outline: none;
+ }
+
 .navbar a:hover,
 .navbar a.active {
     color: #00abf0;
+    
 }
 
 .home {
@@ -577,7 +592,7 @@ body {
 }
 
 #project6::before {
-    background-image: url('assets/images/Split-Logo.jpg');
+    background-image: url('assets/images/RPG.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
