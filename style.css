@@ -530,7 +530,8 @@ a[href="https://instawidget.io"] {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-  }
+       padding: 5% 0;     /* Adding vertical padding can also help with spacing */
+}
 
   .portfolio-title {
     text-align: center;
@@ -558,15 +559,17 @@ a[href="https://instawidget.io"] {
   }
 
   .card .card-info p {
-    display: none;
     opacity: 0;
-    transition: opacity 0.3s;
+    max-height: 0;
+    overflow: hidden; /* To clip the content */
+    transition: opacity 0.5s, max-height 0.6s;
 }
 
 .card:hover .card-info p {
-    display: block;
     opacity: 1;
+    max-height: 333px; /* Adjust this based on your expected max content size */
 }
+
 
   .card.show {
     display: block; /* Only display cards with the show class */
@@ -582,6 +585,7 @@ a[href="https://instawidget.io"] {
     opacity: 0.15; /* Adjust to your desired opacity */
     z-index: -1;  /* Places it below the card content */
 }
+
 
 #project1::before {
     background-image: url('assets/images/Zaytoven.PNG');
@@ -727,6 +731,20 @@ a[href="https://instawidget.io"] {
 .filter-btn.active {
     background-color: #00abf0;
     color: #081b29;
+}
+
+footer {
+    width: 100%;
+    background-color: #081b29;  /* Use a color that matches your site's color scheme */
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0; /* Removes any default margin */
+    padding: 0;
+    font-size: 16px;
 }
 
 
