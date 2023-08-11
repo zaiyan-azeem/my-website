@@ -1,3 +1,6 @@
+
+
+
 function fetchJoke() {
   fetch('https://icanhazdadjoke.com/', {
       headers: {
@@ -75,3 +78,15 @@ if (event.target == modal) {
   modal.style.display = "none";
 }
 }
+
+
+//SCROLL NAVBAR
+
+window.addEventListener('scroll', function() {
+  const navbar = document.querySelector('.header');
+  if (window.scrollY > 10) {  // Change the 10 to adjust the scroll distance required
+      navbar.classList.add('solid-nav');
+  } else {
+      navbar.classList.remove('solid-nav');
+  }
+});
