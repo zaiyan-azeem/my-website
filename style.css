@@ -537,14 +537,28 @@ body {
   
   .card {
     display: none; /*default hide cards*/
+    padding: 20px;
+    margin: 15px 0;
+    height: auto;
     position: relative;
-    margin: 1em;
+   
     width: calc(100% / 3 - 2em); /* Three cards per row, adjust as needed */
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
     transition: box-shadow 0.3s ease-in-out;
   }
+
+  .card .card-info p {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.card:hover .card-info p {
+    display: block;
+    opacity: 1;
+}
 
   .card.show {
     display: block; /* Only display cards with the show class */
