@@ -91,6 +91,28 @@ body {
     color: #00abf0;
     
 }
+#backToTop {
+    display: none;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 99;
+    font-size: 2rem;
+    border: none;
+    outline: none;
+    background-color: rgba(8, 27, 41, 0.7);  /* Using the main dark background color with a bit of transparency */
+    color: #00abf0;  /* Using the primary blue color from your design */
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#backToTop:hover {
+    background-color: #00abf0;  /* Using the primary blue color from your design */
+    color: #081b29;  /* Using the main dark background color */
+}
+
 
 .home {
     height: 100vh;
@@ -316,8 +338,9 @@ a[href="https://instawidget.io"] {
 
 .scroll-hint {
     position: absolute;
+    font-size: 50px;
     bottom: 5%;
-    left: 50%;
+    left: 48.6%;
     transform: translateX(-50%);
     animation: bounce 1s infinite;
     cursor: pointer;
@@ -354,56 +377,7 @@ a[href="https://instawidget.io"] {
     color: #00abf0;
 }
 
-/* New strikethrough CSS */
-#permanent-title {
-    position: relative;
-    overflow: hidden;
-    display: inline; /* Add this */
-}
 
-/* Strikethrough on Software Engineer */
-#permanent-title::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background: #ffffff; /* 00abf0 */
-    opacity: 75%;
-    animation: strikethroughAnimation 2s linear forwards;
-    animation-delay: 4s; /* second delay before the animation starts */
-}
-
-@keyframes strikethroughAnimation {
-    to {
-        width: 100%;
-    }
-}
-
-/* Other title animations (Example: Fades in) */
-#title {
-    font-size: 20px;
-    font-style: italic;
-    color: rgb(0, 124, 173); /* #00abf0 - (0, 171, 240, with #.#); opacity */
-    animation: fadeIn 2s ease-in-out forwards;
-    display: block; /* Changes to block */
-    padding-left: 0px; /* Resets to 0px */
-    position: relative;
-    top: 0px; /* Resets to 0px */
-}
-
-
-@keyframes fadeIn {
-    from {
-        opacity: 0.2;
-        transform: translateY(-30px); /* Adjust as needed */
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
 .home-content h3::before {
     content: '';
@@ -527,6 +501,8 @@ a[href="https://instawidget.io"] {
 
 /* PORTFOLIO */
 .portfolio {
+    align-items: flex-start;
+    min-height: 600px;  /* Adjust this value based on your needs */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -544,19 +520,38 @@ a[href="https://instawidget.io"] {
 
 
   
-  .card {
-    display: none; /*default hide cards*/
+.card {
+    cursor: pointer;
+    display: none;
     padding: 20px;
     margin: 15px 0;
-    height: auto;
     position: relative;
-   
-    width: calc(100% / 3 - 2em); /* Three cards per row, adjust as needed */
+    width: calc(100% / 3 - 2em); 
+    min-height: 150px;
+    max-height: 500px;
+    overflow-y: auto;
     border-radius: 10px;
-    overflow: hidden;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-    transition: box-shadow 0.3s ease-in-out;
-  }
+    transition: box-shadow 0.3s ease-in-out, max-height 0.5s ease-in-out; /* Added transition for max-height */
+    flex-shrink: 0; /* Prevents the card from shrinking when other cards grow */
+    flex-grow: 0;
+    flex-basis: calc(100% / 3 - 2em);  /* this sets the initial base size before growing or shrinking */
+}
+
+.card::after {
+    content: "click to expand +";
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 0.6em;
+    color: #aaa;
+}
+
+.card.expanded::after {
+    content: "click outside to collapse -";
+}
+
+
 
   .card .card-info p {
     opacity: 0;
@@ -565,10 +560,26 @@ a[href="https://instawidget.io"] {
     transition: opacity 0.5s, max-height 0.6s;
 }
 
-.card:hover .card-info p {
-    opacity: 1;
-    max-height: 333px; /* Adjust this based on your expected max content size */
+.card-info span {
+    display: block;
+    margin-bottom: 5px; /* Adjust as needed */
+    font-weight: bold; /* Makes the text bold, remove if you prefer regular weight */
+    color: #ffffffd3; /* You can adjust this color as needed */
 }
+
+
+/* Remove this section that handles hover expansion */
+/*.card:hover .card-info p {
+    opacity: 1;
+    max-height: 333px; 
+}*/
+
+/* Add this section to handle clicked expansion */
+.card.expanded .card-info p {
+    opacity: 1;
+    max-height: 333px; 
+}
+
 
 
   .card.show {
@@ -705,6 +716,29 @@ a[href="https://instawidget.io"] {
 .card-info a:hover {
     background-color: #00abf0;
     color: #ffffff;
+}
+
+/* Webkit browsers like Chrome, Safari */
+.card::-webkit-scrollbar {
+    width: 8px;
+}
+
+.card::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.card::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+.card::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Firefox */
+.card {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
 }
 
 /*FILTER CARDS*/
