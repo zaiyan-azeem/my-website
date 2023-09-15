@@ -1,3 +1,3 @@
 # my-website
 
-Personal portfolio website for me.
+My personal portfolio website.
