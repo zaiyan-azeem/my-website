@@ -29,6 +29,26 @@ document.querySelector('.scroll-hint').addEventListener('click', function() {
   });
 });
 
+//SCROLL BACK TO TOP
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  let backToTopBtn = document.getElementById("backToTop");
+  
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 600) {
+    backToTopBtn.style.display = "block";
+  } else {
+    backToTopBtn.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+document.getElementById('backToTop').addEventListener('click', function() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+});
+
+/*
 //CHANGING TEXT///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Array of titles
@@ -54,6 +74,7 @@ setTimeout(function() {
   setInterval(updateTitle, 4000);
 }, 2700); // ms delay before the first title change
 
+*/
 
 //POPUP CONTACT WINDOW///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -82,6 +103,32 @@ if (event.target == modal) {
   modal.style.display = "none";
 }
 }
+
+
+//CARD FORMATTING
+
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('click', function() {
+      if (this.classList.contains('expanded')) {
+          this.classList.remove('expanded');
+      } else {
+          document.querySelectorAll('.card.expanded').forEach(expandedCard => {
+              expandedCard.classList.remove('expanded');
+          });
+          this.classList.add('expanded');
+      }
+  });
+});
+
+document.addEventListener('click', function(event) {
+  if (!event.target.closest('.card')) {
+      document.querySelectorAll('.card.expanded').forEach(expandedCard => {
+          expandedCard.classList.remove('expanded');
+      });
+  }
+});
+
+
 
 //FILTER CARDS///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function filterSelection(category, event) {
@@ -116,8 +163,6 @@ function filterSelection(category, event) {
 }
 
 
-
-
 // Helper functions
 function addClass(element, name) {
   var arr1, arr2;
@@ -142,6 +187,9 @@ function removeClass(element, name) {
 
 window.onload = function() {
   filterSelection('all');
+
+
+
 
 //SCROLL NAVBAR///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

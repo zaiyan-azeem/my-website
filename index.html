@@ -8,7 +8,6 @@
     <title>Zaiyan Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
 </head>
 
 <body>
@@ -21,9 +20,9 @@
         
         <nav class="navbar">
             <a href="#">Home</a>
-            <a href="#portfolio">Portfolio</a>
+            <a href="#portfolio">Projects</a>
             <a href="Zaiyan Azeem - Resume.pdf" target="_blank">Resume</a>
-            <a href="javascript:void(0);" class="contact-button" onclick="document.getElementById('myModal').style.display='block'">Contact</a>
+           <!-- <a href="javascript:void(0);" class="contact-button" onclick="document.getElementById('myModal').style.display='block'">Contact</a> -->
            <!-- <a href="#gallery">Gallery</a> -->
             
         </nav>
@@ -34,8 +33,7 @@
     <section class="home">
         <div class="home-content">
             <h1>Hi, I'm Zaiyan Azeem</h1>
-            <h3 class="strikethrough" id="permanent-title">Software Engineer</h3>
-            <span id="title">&nbsp;</span>
+            <h3 class="strikethrough" id="permanent-title">Software Engineering Student</h3>
             
 
             <p>Welcome to my portfolio. I am a student that is currently enrolled as a full-time Software Engineering student. 
@@ -74,7 +72,7 @@
 
 <!-- PAGE 2 -->
 <section id="portfolio">
-    <h2 class="portfolio-title">PORTFOLIO</h2>
+    <h2 class="portfolio-title">PROJECTS</h2>
     
     <!-- Filter buttons -->
     <div class="filter-btns">
@@ -85,10 +83,10 @@
     </div>
 
     <div class="portfolio">
-        <div class="card web-app" id="project1">
-        <div class="card-info">
-                <h3>Music Archive Web-app</h3> <br>
-                <p>HTML, CSS, Javascript, AWS, NodeJS, React</p>
+        <div class="card web-app" id="project1" onclick="toggleCard(this)">
+            <div class="card-info">
+                <h3>Music Archive Web-app</h3>
+                <span>HTML, CSS, Javascript, AWS, NodeJS, React</span>
                 <p> • Deployed the website on Amazon EC2 AWS, maximizing scalability and reliability for smooth operation and user
                     access to music metadata API. <br>
                     • Implemented a REST API for accessing music metadata from a song archive using Node.js and Express <br>
@@ -100,10 +98,10 @@
             </div>
         </div>
     
-        <div class="card web-app" id="project2">
+        <div class="card web-app" id="project2" onclick="toggleCard(this)">
             <div class="card-info">
-                <h3>‘Collab.’ Repository Web-app</h3> <br>
-                <p>React, HTML, CSS, JavaScript, Git, Firebase, Adobe Ae/Ai/Ps</p>
+                <h3>‘Collab.’ Repository Web-app</h3>
+                <span>React, HTML, CSS, JavaScript, Git, Firebase, Adobe Ae/Ai/Ps</span>
                 <p>• Developed repository web-app for Hack Western to aid with open source learning <br>
                     • ‘Collab.’ allows users to share/upload content onto a database, where it can be accessed by other registered users
                     for their personal learning using Google Firebase Authentication <br>
@@ -113,10 +111,10 @@
             </div>
         </div>
 
-            <div class="card web-app" id="project3">
+        <div class="card web-app" id="project3" onclick="toggleCard(this)">
             <div class="card-info">
-                <h3>‘Rating Legends’ Repository Web-app</h3> <br>
-                <p>React, Javascript, Firebase</p>
+                <h3>‘Rating Legends’ Repository Web-app</h3>
+                <span>React, Javascript, Firebase</span>
                 <p>• Developed repository web-app for Hack Western to aid with open source learning <br>
                     • ‘Collab.’ allows users to share/upload content onto a database, where it can be accessed by other registered users
                     for their personal learning using Google Firebase Authentication <br>
@@ -125,10 +123,10 @@
             </div>
         </div>
     
-            <div class="card mobile-app" id="project4">
+        <div class="card mobile-app" id="project4" onclick="toggleCard(this)">
             <div class="card-info">
-                <h3>‘You-First’ App</h3> <br>
-                <p>Android Studio, Kotlin, Dart, Java, Firebase</p>
+                <h3>‘You-First’ App</h3>
+                <span>Android Studio, Kotlin, Dart, Java, Firebase</span>
                 <p>• Developed an Android app as a part of hackathon project Hack the North with a user-friendly interface, which
                     aimed to promote mental well-being and self-care through easy access to meditation, positive quotes and wholesome
                     memes <br>
@@ -139,10 +137,10 @@
             </div>
         </div>
 
-            <div class="card mobile-app" id="project5">
+        <div class="card mobile-app" id="project5" onclick="toggleCard(this)">
             <div class="card-info">
-                <h3>‘Split’ App</h3> <br>
-                <p>Android Studio, Java, SQL, Courier, Figma, Adobe Ai/Ps</p>
+                <h3>‘Split’ App</h3>
+                <span>Android Studio, Java, SQL, Courier, Figma, Adobe Ai/Ps</span>
                 <p>• Created automated financial spend-and-split tracker app for TOHacks <br>
                     • Designed entire UI, logo and developed push notifications <br>
                     • ‘Split’ allows users to create/join a plan for a service of their choosing. Users joining a plan pay part of the total
@@ -152,10 +150,10 @@
         </div>
 
 
-            <div class="card other" id="project6">
+        <div class="card other" id="project6" onclick="toggleCard(this)">
             <div class="card-info">
-                <h3>Fantasy RPG</h3> <br>
-                <p>Unity, C#, Git</p>
+                <h3>Fantasy RPG</h3>
+                <span>Unity, C#, Git</span>
                 <p> • Created a 3D adventure game utilizing Unity and C#, following an iterative software development life cycle model <br>
                     • Utilized software development practices, including unit testing, continuous integration, and collective code
                     ownership to deliver high-quality and bug-free code <br>
@@ -166,28 +164,28 @@
             </div>
         </div>
 
-            <div class="card other" id="project7">
+        <div class="card other" id="project7" onclick="toggleCard(this)">
             <div class="card-info">
-                <h3>Cat food Dispenser</h3> <br> 
-                <p>Arduino</p>
+                <h3>Cat food Dispenser</h3>
+                <span>Arduino</span>
                 <p>• Engineered a food dispenser using a breadboard and servos attached to a can to give my cat food at specified times
                     while I was out of town for a prolonged duration</p>
             </div>
         </div>
 
-            <div class="card other" id="project8">
+        <div class="card other" id="project8" onclick="toggleCard(this)">
             <div class="card-info">
-                <h3>Laser Turret</h3> <br>
-                <p>Arduino, C#, Visual Studio</p>
+                <h3>Laser Turret</h3>
+                <span>Arduino, C#, Visual Studio</span>
                 <p>• Inspired by robotic ureteroscopy, I assembled a laser turret controlled by a Microsoft Xbox 360 controller using an
                     x/y axis pad displayed using specific parameters </p>
             </div>
         </div>
 
-            <div class="card web-app" id="project9">
+        <div class="card web-app" id="project9" onclick="toggleCard(this)">
             <div class="card-info">
-                <h3>Password Generator</h3> <br>
-                <p>NodeJS, HTML, CSS, and GitHub Pages</p>
+                <h3>Password Generator</h3>
+                <span>NodeJS, HTML, CSS, and GitHub Pages</span>
                 <p>• Designed and implemented a password generator featuring a user-friendly interface <br>
                     • Utilized the NodeJS crypto module to generate random passwords according to user-specified criteria</p>
             </div>
@@ -238,15 +236,12 @@
     </div>
   </div>
   
+  
   <footer>
     <p>Made by Zaiyan Azeem © 2023</p>
 </footer>
 
-<script>
-    window.onbeforeunload = function () {
-       window.scrollTo(0, 0);
-    }
-    </script>
+<button id="backToTop" title="Go to top">↑</button>
     
 <script>
     window.addEventListener("scroll", function() {
