@@ -550,7 +550,7 @@ a[href="https://instawidget.io"] {
 }
 
 .card.expanded::after {
-    content: "click outside to collapse -";
+    content: "click anywhere to collapse -";
 }
 
 
