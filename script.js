@@ -22,9 +22,34 @@ document.querySelector('.logo').addEventListener('click', function(event) {
   fetchJoke();
 });
 
+//scrolling right amount for navbar
+document.addEventListener("DOMContentLoaded", function() {
+  const navbarHeight = document.querySelector('.header').offsetHeight;
+
+  document.querySelectorAll('.navbar a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        let target = document.querySelector(this.getAttribute('href'));
+        let navbarHeight = document.querySelector('.header').offsetHeight;
+        
+        if (target) {
+            window.scrollTo({
+                top: target.offsetTop - navbarHeight,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+});
+
+
 //SCROLL HINT///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 document.querySelector('.scroll-hint').addEventListener('click', function() {
-  document.querySelector('#portfolio').scrollIntoView({
+  let target = document.querySelector('#portfolio');
+  let navbarHeight = document.querySelector('.header').offsetHeight;
+
+  window.scrollTo({
+      top: target.offsetTop - navbarHeight,
       behavior: 'smooth'
   });
 });
@@ -128,13 +153,11 @@ document.addEventListener('click', function(event) {
   }
 });
 
-
-
-//FILTER CARDS///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//FILTER CARDS
 function filterSelection(category, event) {
   var cards, i;
-  cards = document.getElementsByClassName("card");
-
+  cards = document.querySelectorAll("#project-section .card");  // This targets only the cards within the project section
+  
   for (i = 0; i < cards.length; i++) {
       if (category == "all" || cards[i].classList.contains(category)) {
           addClass(cards[i], "show");
@@ -162,31 +185,31 @@ function filterSelection(category, event) {
   }
 }
 
-
 // Helper functions
 function addClass(element, name) {
-  var arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
+  var arr1 = element.className.split(" ");
   if (arr1.indexOf(name) == -1) {
-      element.className += " " + name;
+    element.className += " " + name;
   }
 }
 
 function removeClass(element, name) {
-  var arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (var i = 0; i < arr2.length; i++) {
-      while (arr1.indexOf(arr2[i]) > -1) {
-          arr1.splice(arr1.indexOf(arr2[i]), 1);
-      }
+  var arr1 = element.className.split(" ");
+  if (arr1.indexOf(name) > -1) {
+    element.className = element.className.replace(name, "").trim();
   }
-  element.className = arr1.join(" ");
 }
+
+
 
 window.onload = function() {
   filterSelection('all');
+  var cards = document.querySelectorAll('.card');
+  cards.forEach(function(card) {
+      card.classList.add('show');
+  });
+
+
 
 
 

@@ -501,26 +501,36 @@ a[href="https://instawidget.io"] {
     cursor: pointer;
 }
 
-/* PORTFOLIO */
+/********************************************** PORTFOLIO **************************************/
+
 .portfolio {
     align-items: flex-start;
     min-height: 600px;  /* Adjust this value based on your needs */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-       padding: 5% 0;     /* Adding vertical padding can also help with spacing */
+    padding: 5% 0;     /* Adding vertical padding can also help with spacing */
+    position: relative;  /* Required for the :before pseudo-element to work */
 }
 
-  .portfolio-title {
+.portfolio:before {
+    display: block;
+    content: " ";
+    margin-top: -800px;      /* Negative value of the expected height of the fixed header */
+    height: 800px;           /* The same value as above, but positive */
+    visibility: hidden;
+    pointer-events: none;  /* Makes sure it doesn't interfere with clicking */
+}
+
+.portfolio-title {
     text-align: center;
     font-size: 2em;
     color: #ffffff;
     /* Add more styles as needed */
 }
 
-/********************************************** PORTFOLIO CARDS **************************************/
 
-
+/* PORTFOLIO CARDS */
   
 .card {
     cursor: pointer;
@@ -767,6 +777,36 @@ a[href="https://instawidget.io"] {
 .filter-btn.active {
     background-color: #00abf0;
     color: #081b29;
+}
+
+/* DESIGN SECTION */
+
+.design-title {
+    text-align: center;
+    font-size: 2em;
+    color: #ffffff;
+    /* Add more styles as needed */
+}
+
+#design1::before {
+    background-image: url('assets/images/Split-Logo-Figma.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#design2::before {
+    background-image: url('assets/images/Bank-UI.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#design3::before {
+    background-image: url('assets/images/School-Course.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 footer {

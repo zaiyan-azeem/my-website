@@ -11,22 +11,23 @@
 </head>
 
 <body>
-
+  
     <header class="header">
         <div>
             <a href="#" class="logo">Azeem</a>
             <div id="joke"></div>
         </div>
-        
-        <nav class="navbar">
-            <a href="#">Home</a>
-            <a href="#portfolio">Projects</a>
-            <a href="Zaiyan Azeem - Resume.pdf" target="_blank">Resume</a>
-           <!-- <a href="javascript:void(0);" class="contact-button" onclick="document.getElementById('myModal').style.display='block'">Contact</a> -->
-           <!-- <a href="#gallery">Gallery</a> -->
-            
-        </nav>
+        <div class="navbar-fixed">        
+            <nav class="navbar">
+                <a href="#">Home</a>
+                <a href="#portfolio">Projects</a>
+                <a href="#design">Designs</a>
+                <!--<a href="Zaiyan Azeem - Resume.pdf" target="_blank">Resume</a>-->
+                <!--<a href="javascript:void(0);" class="contact-button" onclick="document.getElementById('myModal').style.display='block'">Contact</a> -->
+            </nav>
+        </div>
     </header>
+    
     
     
 
@@ -39,7 +40,8 @@
             <p>Welcome to my portfolio. I am a student that is currently enrolled as a full-time Software Engineering student. 
                 I am fascinated by the idea of solving current world issues by innovating AI and implementing technological solutions.</p>
             <div class="btn-box">
-                <a href="#portfolio">Projects</a>
+                <a href="Zaiyan Azeem - Resume.pdf" target="_blank">Resume</a>
+                <!--<a href="#portfolio">Projects</a>-->
                 <a href="#contact-form" class="contact-button" onclick="document.getElementById('myModal').style.display='block';">Let's Talk</a>
 
             </div>
@@ -82,9 +84,12 @@
         <button class="filter-btn" onclick="filterSelection('other', event)">Other</button>
     </div>
 
-    <div class="portfolio">
-        <div class="card web-app" id="project1" onclick="toggleCard(this)">
+    <!-- This div is specifically for the projects -->
+    <div class="portfolio" id="project-section">
+        
+        <div class="card web-app" id="project1" >
             <div class="card-info">
+                
                 <h3>Music Archive Web-app</h3>
                 <span>HTML, CSS, Javascript, AWS, NodeJS, React</span>
                 <p> • Deployed the website on Amazon EC2 AWS, maximizing scalability and reliability for smooth operation and user
@@ -98,7 +103,7 @@
             </div>
         </div>
     
-        <div class="card web-app" id="project2" onclick="toggleCard(this)">
+        <div class="card web-app" id="project2" >
             <div class="card-info">
                 <h3>‘Collab.’ Repository Web-app</h3>
                 <span>React, HTML, CSS, JavaScript, Git, Firebase, Adobe Ae/Ai/Ps</span>
@@ -111,7 +116,7 @@
             </div>
         </div>
 
-        <div class="card web-app" id="project3" onclick="toggleCard(this)">
+        <div class="card web-app" id="project3" >
             <div class="card-info">
                 <h3>‘Rating Legends’ Repository Web-app</h3>
                 <span>React, Javascript, Firebase</span>
@@ -123,7 +128,7 @@
             </div>
         </div>
     
-        <div class="card mobile-app" id="project4" onclick="toggleCard(this)">
+        <div class="card mobile-app" id="project4" >
             <div class="card-info">
                 <h3>‘You-First’ App</h3>
                 <span>Android Studio, Kotlin, Dart, Java, Firebase</span>
@@ -137,7 +142,7 @@
             </div>
         </div>
 
-        <div class="card mobile-app" id="project5" onclick="toggleCard(this)">
+        <div class="card mobile-app" id="project5" >
             <div class="card-info">
                 <h3>‘Split’ App</h3>
                 <span>Android Studio, Java, SQL, Courier, Figma, Adobe Ai/Ps</span>
@@ -150,7 +155,7 @@
         </div>
 
 
-        <div class="card other" id="project6" onclick="toggleCard(this)">
+        <div class="card other" id="project6" >
             <div class="card-info">
                 <h3>Fantasy RPG</h3>
                 <span>Unity, C#, Git</span>
@@ -164,7 +169,7 @@
             </div>
         </div>
 
-        <div class="card other" id="project7" onclick="toggleCard(this)">
+        <div class="card other" id="project7" >
             <div class="card-info">
                 <h3>Cat food Dispenser</h3>
                 <span>Arduino</span>
@@ -173,7 +178,7 @@
             </div>
         </div>
 
-        <div class="card other" id="project8" onclick="toggleCard(this)">
+        <div class="card other" id="project8" >
             <div class="card-info">
                 <h3>Laser Turret</h3>
                 <span>Arduino, C#, Visual Studio</span>
@@ -182,7 +187,7 @@
             </div>
         </div>
 
-        <div class="card web-app" id="project9" onclick="toggleCard(this)">
+        <div class="card web-app" id="project9" >
             <div class="card-info">
                 <h3>Password Generator</h3>
                 <span>NodeJS, HTML, CSS, and GitHub Pages</span>
@@ -208,8 +213,32 @@
 
 
 <!-- PAGE 3 -->
-<section id="gallery">
-    <!-- Your gallery content here -->
+<section id="design">
+    <h2 class="design-title">DESIGNS</h2>
+    <div class="portfolio">
+        <div class="card web-app show" id="design1">
+        <div class="card-info">
+            <h3>$plit UI Design</h3>  
+            <p><a href="https://www.figma.com/file/F5TdMauzmIsXUHrVkRPJqT/%24plit-App-Design-UI?type=design&node-id=0%3A1&mode=design&t=5dnbAliaFCV932ZF-1" target="_blank">FIGMA LINK</a></p>
+        </div>
+    </div>
+
+    <div class="card web-app" id="design2" >
+        <div class="card-info">
+            <h3>Bank UI Design</h3>  
+            <p><a href="https://www.figma.com/file/Z8LidrGW5oGEDddX4aA9TI/zazeem2-Bank-UI-Design?type=design&node-id=0%3A1&mode=design&t=eBgayXFslRIPcwZA-1" target="_blank">FIGMA LINK</a></p>
+        </div>
+    </div>
+    
+
+    <div class="card web-app" id="design3" >
+        <div class="card-info">
+            <h3>School Courses UI Design</h3>  
+            <p><a href="https://www.figma.com/file/y6jvGZgwAfHpRBEDVwW2bY/school?type=design&node-id=0%3A1&mode=design&t=mKtgjNc1Jo2lWQRc-1" target="_blank">FIGMA LINK</a></p>
+        </div>
+    </div>
+    
+</div>
 </section>
   
 <!-- The Modal -->
